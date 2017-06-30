@@ -1,0 +1,72 @@
+﻿@model Livraria.Site.Models.Livro
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir Livro</h2>
+
+<h3>Tem certeja que deseja excluir este livro?</h3>
+<div>
+    <h4>Dados do livro:</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Autor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Autor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Editora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Editora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estoque)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estoque)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ano)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ano)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default" }) |
+            <input type="submit" value="Excluir" class="btn btn-danger" />
+        </div>
+    }
+</div>
